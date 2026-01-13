@@ -97,38 +97,49 @@ A Kubernetes **cluster** is a group of machines (nodes) that run your applicatio
 
 ---
 
-### Create a cluster with minikube
+#### Create a cluster with minikube
 
 ```sh
 minikube start
 ````
 
-### Explore cluster with minikube
+#### Explore cluster with minikube
 ```sh
 kubectl cluster-info
 ```
 
-### See the nodes
+#### See the nodes
 ```sh 
 kubectl get nodes
 ```
 
-### Names spaces that is created by default
+#### Names spaces that is created by default
 ```sh 
 kubectl get namespaces
 ```
 
-### check for pods and services installed
+#### check for pods and services installed
 ```sh
 kubectl get pods -A
 ```
 
-### Check the services that is running in the claster
+#### Check the services that is running in the claster
 ```sh
 kubctl get services -A
 ```
 
-````````````````````````````````
+#### Create name spaces
+```sh
+kubectl apply -f namespace.yaml
+```
+
+
+
+```sh 
+
+```
+
+````````````````````
 
 
 

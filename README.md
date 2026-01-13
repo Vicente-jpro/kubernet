@@ -128,18 +128,20 @@ kubectl get pods -A
 kubctl get services -A
 ```
 
-#### Create name spaces
+#### Execute a kubernete file
 ```sh
-kubectl apply -f namespace.yaml
+kubectl apply -f filename.yaml
 ```
 
-
+#### List the pods with using especific `namespace`
 
 ```sh 
-
+kubectl get pods -n <namespace>
 ```
 
-````````````````````
+```sh
+
+`````````````````
 
 
 

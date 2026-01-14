@@ -107,6 +107,10 @@ minikube start
 ```sh
 kubectl cluster-info
 ```
+### Execute kubernet file.
+```sh 
+kubectl apply -f filename.yml
+```
 
 #### See the nodes
 ```sh 
@@ -118,9 +122,29 @@ kubectl get nodes
 kubectl get namespaces
 ```
 
-#### check for pods and services installed
+#### Show pods and services installed
 ```sh
 kubectl get pods -A
+```
+
+#### Show extra data from pod (by preference use this comand)
+```sh
+kubectl get pods -n <namespace> -o wide
+```
+## Busybox
+### Show busybox pods 
+```sh 
+kubectl get pods
+```
+
+### Use busybox as terminal
+```sh
+kubectl exec -it <busybox-pod> -- /bin/sh  
+```
+
+### Verify if pod (application)  is running `kubectl exec -it <busybox-pod> -- /bin/sh` 
+```sh
+wget <pod-ip-address>:<port>
 ```
 
 #### Check the services that is running in the claster
@@ -128,20 +152,32 @@ kubectl get pods -A
 kubctl get services -A
 ```
 
-#### Execute a kubernete file
+### Delete a pod
 ```sh
-kubectl apply -f filename.yaml
+kubectl delete pod <pod-name> -n <namespace>
+
 ```
 
-#### List the pods with using especific `namespace`
+### Check pod logs or description. It is used to see the applications logs to identify the problems
+```sh
+kubectl describe pod <pod-name> -n <namespace>
 
+```
+
+### Exposes LoadBalancer services
+The minikube tunnel command creates a network route on your host machine to services deployed with type LoadBalancer in your minikube cluster.
 ```sh 
-kubectl get pods -n <namespace>
+minikube tunnel
 ```
 
-```sh
+### The command  will list all services in the development namespace. it also shows the ip address
 
-`````````````````
+We are able to see the LoadBanlancer, cluster-ip external-ip and ports.
+```sh 
+kubectl get services -n <namespace>
+```
+
+````````````````````
 
 
 

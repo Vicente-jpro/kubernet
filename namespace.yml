@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: development
+
+--- # This line means that it is a new document in the same YAML file
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production

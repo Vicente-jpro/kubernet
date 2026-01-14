@@ -177,7 +177,27 @@ We are able to see the LoadBanlancer, cluster-ip external-ip and ports.
 kubectl get services -n <namespace>
 ```
 
-````````````````````
+### Used to see all the resources object
+```sh
+kubectl api-resouces
+```
+
+### List all pods
+```sh
+kubectl get pods -n kube-system
+```
+
+### etcd -> Stores all cluster state and configuration data
+```sh 
+kubectl get pods -n kube-system | grep etcd
+```
+
+### kube scheduller 
+```sh
+
+```````````````````````````
+
+
 
 
 

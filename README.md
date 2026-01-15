@@ -112,6 +112,12 @@ kubectl cluster-info
 kubectl apply -f filename.yml
 ```
 
+
+### Execute kubernet files into a folder.
+```sh 
+kubectl apply -f .
+```
+
 #### See the nodes
 ```sh 
 kubectl get nodes

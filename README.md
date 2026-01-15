@@ -164,6 +164,11 @@ kubectl describe pod <pod-name> -n <namespace>
 
 ```
 
+```sh
+kubectl describe pod <pod-name>
+
+```
+
 ### Exposes LoadBalancer services
 The minikube tunnel command creates a network route on your host machine to services deployed with type LoadBalancer in your minikube cluster.
 ```sh 

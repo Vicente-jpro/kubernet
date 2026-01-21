@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-green-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: blue-green # This is the Pod that we want to manage on deployment
+  template: # This is the Pod template definition
+    metadata:
+      labels:
+        app: blue-green
+    spec:
+      containers:
+        - name: blue-green
+          image: mtinside/blue-green:blue

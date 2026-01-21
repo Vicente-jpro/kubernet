@@ -97,11 +97,29 @@ A Kubernetes **cluster** is a group of machines (nodes) that run your applicatio
 
 ---
 
-#### Create a cluster with minikube
-
+#### Minikube Commands
+ Create a cluster with minikube
 ```sh
 minikube start
-````
+```
+
+Stop minikube
+
+```sh
+minikube stop
+```
+
+
+### Exposes LoadBalancer services
+The minikube tunnel command creates a network route on your host machine to services deployed with type LoadBalancer in your minikube cluster.
+```sh 
+minikube tunnel
+```
+
+### Show the minekube ip address on my machine
+```sh
+minikube ip
+```
 
 #### Explore cluster with minikube
 ```sh
@@ -143,14 +161,23 @@ kubectl get pods -n <namespace> -o wide
 kubectl get pods
 ```
 
-### Use busybox as terminal
+
+## This comand whatch the pods running
+Watch the pods running. Ince command to verify if replica is running sucessfuly after update. 
+```sh 
+kubectl get pods -w
+```
+
+### Use busybox and terminal
+for busybox
 ```sh
 kubectl exec -it <busybox-pod> -- /bin/sh  
 ```
 
-### Verify if pod (application)  is running `kubectl exec -it <busybox-pod> -- /bin/sh` 
+for terminal 
+
 ```sh
-wget <pod-ip-address>:<port>
+kubectl exec -it <pod-name>  /bin/sh  
 ```
 
 #### Check the services that is running in the claster
@@ -173,12 +200,6 @@ kubectl describe pod <pod-name> -n <namespace>
 ```sh
 kubectl describe pod <pod-name>
 
-```
-
-### Exposes LoadBalancer services
-The minikube tunnel command creates a network route on your host machine to services deployed with type LoadBalancer in your minikube cluster.
-```sh 
-minikube tunnel
 ```
 
 ### The command  will list all services in the development namespace. it also shows the ip address
@@ -206,6 +227,25 @@ kubectl get pods -n kube-system | grep etcd
 ### kube scheduler
 ```sh
 kubectl get pods -n kube-system | grep kube-scheduler
+```
+
+### Redirect to especific port. 
+This command is usefull to see if the container is runnig perfetly
+```sh
+kubectl port-forward <pod-name> <port-expose>:<port-server>
+```
+
+
+### Redirect to especific port. 
+Verify if a container is runnig on pod.
+```sh
+kubectl logs blue
+```
+
+### Get batch
+Get jobs and batch running
+```sh 
+kubectl api-resources | grep batch
 ```
 
 ---

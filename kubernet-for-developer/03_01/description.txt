@@ -1,0 +1,8 @@
+Objective of this section:
+
+* Create a Pod, deploy it and add 3 replica.
+
+1 - We create a Pod
+2 - We create a deployment
+3 - On deployment we especify the matchLabels that have match with Pod 
+4 - We also say how many replica do we want on a pod.
